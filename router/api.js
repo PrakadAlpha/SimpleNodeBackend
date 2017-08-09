@@ -14,7 +14,7 @@ router.use(bodyParser.json());
 router.post('/register', function(req, res){
   var reqObj = req.body;
   console.log(reqObj);
-      var insertData = {
+      var data = insertData = {
         "name" : reqObj.Name,
         "place" : reqObj.Place,
         "age" : reqObj.Age

@@ -5,6 +5,7 @@ var router = require('./router/api');
 const url = require('url');
 var db = require('./db');
 var app = express();
+dataType: 'jsonp';
 //create Server
 
 
