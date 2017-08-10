@@ -5,10 +5,11 @@ var router = require('./router/api');
 const url = require('url');
 var db = require('./db');
 var app = express();
-dataType: 'jsonp';
+var cors = require('cors');
 //create Server
 
 
+app.use(cors());
 
 app.use('/api',router);
 

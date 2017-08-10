@@ -17,10 +17,7 @@ id:string;
 
 isEditing = false;
 
-addDataForm: FormGroup;
-  Name = new FormControl('', Validators.required);
-  Place = new FormControl('', Validators.required);
-  Age = new FormControl('', Validators.required);
+
 
   constructor(private homeService:HomeService,
               private formBuilder: FormBuilder,
@@ -29,12 +26,7 @@ addDataForm: FormGroup;
    }
   ngOnInit() {
       this.getDatas();
-      this.addDataForm = this.formBuilder.group({
-        id: this.id,
-        Name: this.Name,
-        Place: this.Place,
-        Age: this.Age
-      });
+
   }
   getDatas(){
     this.homeService.getDatas().subscribe(
@@ -42,17 +34,7 @@ addDataForm: FormGroup;
       err => console.log(err)
     )
   }
-  addData(datas) { this.homeService.addData(this.addDataForm.value).subscribe(
-      res => {
-        const newData = res.json();
-        this.datas.push(newData);
-        this.addDataForm.reset();
-        this.getDatas();
-        this.toast.setMessage('item added successfully.', 'success');
-      },
-      err => console.log(err)
-    );
-  }
+
   enableEditing(data){
     this.isEditing = true;
     this.data = data;

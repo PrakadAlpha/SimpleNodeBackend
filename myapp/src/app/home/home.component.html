@@ -6,7 +6,7 @@
 
 </div>
 <div class="col-md-9">
-  <table class="table">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th>#</th>
@@ -30,7 +30,7 @@
     <tbody *ngIf="isEditing">
         <tr>
           <td colspan="4">
-            <form class="form-inline" #form="ngForm" (ngSubmit)="editData(data)" style="display:inline">
+            <form class="form-inline" #form="ngForm" (ngSubmit)="editData(data)" style="display:inline;">
               <div class="form-group">
                   <input class="form-control" type="text" name="Name" [(ngModel)]="data.Name" placeholder="Name" required>
               </div>
@@ -46,25 +46,6 @@
         </tr>
       </tbody>
   </table>
-  <br>
-  <div class = "jumbotron">
-  <div *ngIf="!isEditing">
-    <h4>Add new data</h4>
-    <div >
-      <form class="form-inline" [formGroup]="addDataForm" (ngSubmit)="addData(datas)" style="text-align:center">
-        <div class="form-group">
-            <input class="form-control" type="text" name="Name" formControlName="Name" placeholder="Name">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="text" name="Place" formControlName="Place" placeholder="Place" min="0">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="number" name="Age" formControlName="Age" placeholder="Age" step="any" min="0">
-        </div>
-        <button class="btn btn-primary" type="submit" [disabled]="!addDataForm.valid"><i class="fa fa-floppy-o"></i> Add</button>
-      </form>
-    </div>
-  </div>
 </div>
-</div>
+
 <div class="col-md-2"></div>

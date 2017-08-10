@@ -4,12 +4,14 @@ const mysql = require('mysql');
 const url = require('url');
 var db = require('../db');
 const bodyParser = require('body-parser');
+var cors = require('cors');
 
 
 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 
+router.use(cors());
 
 router.post('/register', function(req, res){
   var reqObj = req.body;

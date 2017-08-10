@@ -7,15 +7,18 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeService } from './services/home.service';
+import { AddComponent } from './add/add.component';
 
 const appRoutes: Routes = [
-  {path: '', component : HomeComponent}
+  {path: '', component : HomeComponent},
+  {path: 'add', component : AddComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    AddComponent,
   ],
   imports: [
     BrowserModule,
